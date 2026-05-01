@@ -31,7 +31,8 @@ RARC-Net/
   data/
     raw/
       news/
-        All_external.csv              # local large raw news corpus, ignored by git
+        All_external.csv.zip          # Git LFS archive of the raw news corpus
+        All_external.csv              # extracted local corpus, ignored by git
       Climate_Risk_Index.xlsx
       EPU.csv
       medium_CPI.csv
@@ -89,7 +90,7 @@ The experiment separates input variables by functional responsibility rather tha
 | --- | --- | --- |
 | Market OHLCV | `data/raw/sp500.csv`, `data/raw/sp500_volume.csv` | Fast-branch price and volume behavior |
 | Technical indicators | `data/processed/sp500_with_indicators.csv` | Fast-branch local trading features |
-| News corpus | `data/raw/news/All_external.csv` | Raw financial-news text and metadata |
+| News corpus | `data/raw/news/All_external.csv.zip` | Git LFS archive of the raw financial-news text and metadata |
 | ESG sentiment index | `data/processed/esg_emotion_index.csv` | Daily FinBERT-derived sentiment index, not committed in this release |
 | Rates and spreads | `data/raw/sp500_slow.csv` | Slow-branch interest-rate and spread state |
 | Policy uncertainty | `data/raw/EPU.csv` | Slow-branch policy uncertainty |
@@ -97,7 +98,13 @@ The experiment separates input variables by functional responsibility rather tha
 | Climate risk | `data/raw/Climate_Risk_Index.xlsx` | PRI/TRI and climate concern proxies |
 | Event audit | `data/processed/macro_event_window_audit.csv` | Stress-window audit data used by analysis figures |
 
-`data/raw/news/All_external.csv` is a large local corpus, approximately 5.3 GB. It is ignored by git because it exceeds normal GitHub repository limits. For public release, place the file in GitHub Releases, Zenodo, OSF, Google Drive, or an institutional data repository, then add a stable URL and checksum here.
+`data/raw/news/All_external.csv.zip` is tracked with Git LFS. Before running FinBERT conversion, extract it in place so that the working tree contains:
+
+```bash
+unzip data/raw/news/All_external.csv.zip -d data/raw/news/
+```
+
+The extracted `data/raw/news/All_external.csv` is approximately 5.3 GB and is intentionally ignored by ordinary git. The compressed archive is approximately 1.4 GB and must remain under Git LFS rather than regular git history.
 
 The raw news file has the following schema:
 
@@ -255,9 +262,9 @@ The release intentionally excludes:
 - process notes,
 - old model branches not used by the final RARC-Net experiments,
 - generated prediction dumps from obsolete runs,
-- large raw news corpus from git tracking.
+- extracted large raw news corpus from ordinary git tracking.
 
-The local copy may contain `data/raw/news/All_external.csv`; this file is ignored by git and should be distributed as an external artifact.
+The repository tracks `data/raw/news/All_external.csv.zip` through Git LFS. The extracted `data/raw/news/All_external.csv` is a local working file and remains ignored.
 
 ## Citation
 
