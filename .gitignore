@@ -1,0 +1,35 @@
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Model checkpoints and generated artifacts
+*.pth
+*.pt
+*.pkl
+*.joblib
+!checkpoints/**/*.pth
+!checkpoints/**/*.pkl
+!checkpoints/SHA256SUMS.txt
+results/**/best_model.*
+results/**/best_residual_model.*
+results/**/gamma_heatmap.png
+results/**/event_window_analysis.png
+results/**/performance_radar.png
+
+# Large raw news corpus: keep locally or publish as an external data artifact.
+data/raw/news/All_external.csv
+
+# Logs
+*.log
+runs/
+wandb/

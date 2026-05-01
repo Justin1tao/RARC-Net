@@ -1,0 +1,6 @@
+model_or_mechanism,ic,sharpe,mse,rmse,synergy_gap_percent,reference_anchor
+Strong fast anchor (RQ1),0.0465,1.058,0.000109,0.0104,0.0,yes
+Shared fusion,0.0432,0.931,0.000111,0.0105,-7.1,no
+FiLM modulation,0.0410,0.756,0.000112,0.0106,-11.8,no
+Decoupled residual,0.0553,1.355,0.000108,0.0104,18.9,no
+Full RARC-Net,0.0590,1.425,0.000106,0.0103,26.9,no

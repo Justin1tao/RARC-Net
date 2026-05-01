@@ -1,0 +1,5 @@
+configuration,esg_news_sentiment,slow_correction,ic,ic_relative_gain_percent,sharpe,sharpe_relative_gain_percent,synergy_strength
+Fast anchor A,no,no,0.0428,0.0,0.962,0.0,baseline
+A + Slow correction,no,yes,0.0446,4.2,1.012,5.2,limited
+Fast anchor B,yes,no,0.0465,0.0,1.058,0.0,baseline
+B + Slow correction,yes,yes,0.0590,26.9,1.425,34.7,strong

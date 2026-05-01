@@ -1,0 +1,7 @@
+factor_group,variables_included,modeling_role
+Volatility,"VIX, VIX_Change, VIX_Vol",Market risk and stress level
+Policy Uncertainty,"EPU, EPU_Change, EPU_Vol",Policy regime uncertainty
+Inflation-Policy Stress,Policy_Stress = pct_change(CPI) * EPU,Inflation policy interaction pressure
+Climate Risk,"PRI, TRI, Transition_concern, Physical_concern",Slow-moving climate risk background
+Climate Sensitivity,Climate_Sensitivity = VIX * PRI,State-dependent climate amplification
+Liquidity Market State,"volume_ratio, log_return",Liquidity and local market state

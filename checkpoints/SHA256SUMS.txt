@@ -1,0 +1,2 @@
+257a9e62992b78349ec9b9d8de2cf5cc4a594dae942af1cbb8f0e2d389753890  checkpoints/fast_channel/B_with_ESG_window10_models.pkl
+db4a5ccaf0191afa1f63f23181aab8e79c2bf1b5cd7234497cf3ab90acd12c7c  checkpoints/slow_channel/transformer_slow.pth

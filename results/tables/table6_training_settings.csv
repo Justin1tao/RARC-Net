@@ -1,0 +1,12 @@
+item,setting
+Fast branch optimizer,C-AdamW (weight decay=1e-5)
+Fast branch learning-rate search space,"[1e-4, 1e-3] (automatic search)"
+Fast branch batch-size search space,"{64, 128, 256} (automatic search)"
+Fast branch training epochs / early stopping,100 epochs in final training; early stopping patience=15
+End-to-end fusion optimizer,C-AdamW (default learning rate=1e-4; weight decay=1e-5)
+End-to-end fusion batch size,64
+End-to-end fusion loss weights,"lambda_mse=1.0; lambda_ic=0.5; lambda_sharpe=0.05"
+Step 3 residual-specialized correction learning,learning rate=3e-3; weight decay=1e-4; 30 epochs; patience=10
+Step 4 joint refinement under a unified objective,learning rate=1e-4; 50 epochs; patience=15
+Optional Step-4 fine-tuning,learning rate=1e-5; 20 epochs
+tau_max dynamic budget upper bound,0.02
